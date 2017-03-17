@@ -31,8 +31,6 @@ _Address book to store contact info for friends and family, using twig to displa
 
 
 
-
-
 ## Known Bugs
 
 _None at this time_
