@@ -14,17 +14,15 @@
     return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
   });
 
-  $app->post("/contacts", function() use ($app) {
-    $newContact = new Contact ($_POST['phone'], $_POST['contact'],$_POST['address'], $_POST['email']);
+  $app->post("/inputContact", function() use ($app) {
+    $newContacts = new Contact ($_POST['phone'], $_POST['name'],$_POST['address'], $_POST['email']);
     $newContacts->save();
-
-    return $app['twig']->render('index.html.twig', array('contacts' => $_SESSION['list_of_contacts']));
-
+    return $app['twig']->render('contact.html.twig', array('contacts' => $newContacts));
   });
 
   $app->post("/delete_contacts", function() use ($app) {
     Contact::deleteAll();
-    return $app['twig']->render('index.html.twig');
+    return $app['twig']->render('deleteContactPage.html.twig');
   });
 
   return $app;

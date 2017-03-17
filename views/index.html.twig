@@ -4,39 +4,43 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Address Book</title>
+    <title>Zach's Address Book</title>
   </head>
   <body>
     <div class="container">
+      <h1>Zach's Address Book</h1>
+      <form action="/inputContact" method="post" id="addressbook">
+       <div class="form-group">
+        <label for="name">Enter name:</label>
+        <input id="name" name="name" type="text" required>
+        </div>
+        <div class="form-group">
+        <label for="email">Enter email:</label>
+        <input for="email" name="email" type="num" required>
+        </div>
+        <div class="form-group">
+        <label for="phone">Enter phone:</label>
+        <input for="phone" name="phone" type="num" required>
+        </div>
+        <div class="form-group">
+        <label for="address">Enter address:</label>
+        <input for="address" name="address" type="num" required>
+        </div>
 
-        <h1>Address Book</h1>
-        <form action="/addressbook" method="post" id="addressbook">
-          <div class="form-group">
-            <label for="name">Enter name:</label>
-            <input id="name" name="name" type="text" required>
-          </div>
-          <div class="form-group">
-          <label for="email">Enter email:</label>
-          <input for="email" name="email" type="num" required>
-          </div>
-          <div class="form-group">
-          <label for="phone">Enter phone:</label>
-          <input for="phone" name="phone" type="num" required>
-          </div>
-          <div class="form-group">
-          <label for="address">Enter address:</label>
-          <input for="address" name="address" type="num" required>
-          </div>
+        <button type="submit">Submit</button>
+      </form>
+        <h1> Here's the list of your contacts</h1>
+        {% for contact in contacts %}
+         <h6>{{ contact.getName }}</h6>
+         <h6>{{ contact.getPhone }}</h6>
+         <h6>{{ contact.getAddress }}</h6>
+         <h6>{{ contact.getEmail }}</h6>
+         {% endfor %}
 
-          <button type="submit">Submit</button>
-        </form>
-        <h1> Here's the list of contacs</h1>
-
-
-    <form action="reset" method="post">
+    <form action="/delete_contacts" method="post">
       <div>
         <h3>Are you sure you want to delete all your contacts? If so, click the red button below:</h3>
-        <button class="bg-danger">Delete all contacts</button>
+        <button type="submit" class="bg-danger">Delete all contacts</button>
       </div>
     </form>
   </div>
