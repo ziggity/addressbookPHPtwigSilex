@@ -1,7 +1,11 @@
 h1 {
-  color:blue;
+  color:black;
+  text-shadow: 2px 2px #000000;
 }
-
+h2 {
+  color:black;
+  text-shadow: 2px 2px #000000;
+}
 #addressbook {
  font-size:20px;
 }
@@ -61,7 +65,8 @@ img{
   .form-panel-width { width: 100%; }
 }
 .bgimg {
-    background-image: url('http://lilithluciferandlarry.files.wordpress.com/2013/07/lined_white_paper.jpg');
+    background-image:
+     url('http://lilithluciferandlarry.files.wordpress.com/2013/07/lined_white_paper.jpg');
     opacity:.85;
 }
 
@@ -69,4 +74,23 @@ body {
   overflow: auto;
   margin: 0;
   float: right;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.portrait {
+    height: 80px;
+    width: 30px;
+}
+
+.landscape {
+    height: 300px;
+    width: 1000px;
+}
+
+.square {
+    height: 75px;
+    width: 75px;
 }

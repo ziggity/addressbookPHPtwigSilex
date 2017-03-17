@@ -14,15 +14,16 @@
                 <nav class="navbar navbar-default navbar-fixed-top">
                  <ul>
                    <li><a href="/">HOME</a></li>
-                   <li><a href="deleteContactPage">Delete Address Book</a></li>
-                   <li><a href="about.html">About</a></li>
+                   <li><a href="https://en.wikipedia.org/wiki/Address_book">Wiki</a></li>
+                   <li><a href="https://github.com/ziggity/addressbookPHPtwigSilex">Github</a></li>
                    <li><a href="mailto:zachbeecher@gmail.com">Contact</a></li>
                  </ul>
                 </nav>
               </header>
             <div class="jumbotron">
-              <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlEIypxkVkhtz7KHLDbGlEHDsnvzvFdL_ouXziq_Txy3-jLERpuA" id="jumbopic">
+              <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlEIypxkVkhtz7KHLDbGlEHDsnvzvFdL_ouXziq_Txy3-jLERpuA" class="landscape" id="jumbopic">
             </div>
+      <div class="well">
       <h1>Zach's Address Book</h1>
       <form action="/inputContact" method="post" id="addressbook">
        <div class="form-group">
@@ -38,6 +39,22 @@
         <input for="phone" name="phone" type="num" required>
         </div>
         <div class="form-group">
+        <label for="city">Enter city:</label>
+        <input for="city" name="city" required>
+        </div>
+        <div class="form-group">
+        <label for="street">Enter street:</label>
+        <input for="street" name="street" required>
+        </div>
+        <div class="form-group">
+        <label for="state">Enter state:</label>
+        <input for="state" name="state" required>
+        </div>
+        <div class="form-group">
+        <label for="zip">Enter zip:</label>
+        <input for="zip" name="zip" required>
+        </div>
+        <div class="form-group">
         <label for="address">Enter address:</label>
         <input for="address" name="address" required>
         </div>
@@ -48,18 +65,22 @@
 
         <button type="submit">Submit</button>
       </form>
-        <h1> Here's the list of your contacts</h1>
+        <h1> Here's the list of your contacts so far:</h1>
         {% for contact in contacts %}
          <h6>{{ contact.getName }}</h6>
          <h6>{{ contact.getPhone }}</h6>
          <h6>{{ contact.getAddress }}</h6>
+         <h6>{{ contact.getCity }}</h6>
+         <h6>{{ contact.getState }}</h6>
+         <h6>{{ contact.getZip }}</h6>
+         <h6>{{ contact.getStreet }}</h6>
          <h6>{{ contact.getEmail }}</h6>
          <h6><img src= {{ contact.getImage }}></h6>
          {% endfor %}
 
     <form action="/delete_contacts" method="post">
       <div>
-        <h1>Delete your address book here:</h1>
+        <h2>Delete your address book here:</h2>
         <h3>Are you sure you want to delete all your contacts? If so, click the red button below:</h3>
         <button type="submit" class="bg-danger">Delete all contacts</button>
       </div>

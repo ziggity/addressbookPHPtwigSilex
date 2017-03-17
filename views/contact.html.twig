@@ -13,8 +13,8 @@
                 <nav class="navbar navbar-default navbar-fixed-top">
                  <ul>
                    <li><a href="/">HOME</a></li>
-                   <li><a href="deleteContactPage">Delete Address Book</a></li>
-                   <li><a href="about.html">About</a></li>
+                   <li><a href="https://en.wikipedia.org/wiki/Address_book">Wiki</a></li>
+                   <li><a href="https://github.com/ziggity/addressbookPHPtwigSilex">Github</a></li>
                    <li><a href="mailto:zachbeecher@gmail.com">Contact</a></li>
                  </ul>
                 </nav>
@@ -24,12 +24,17 @@
             </div>
         <div class="well">
             <form action="/delete_contacts" method="post">
-              <button class="btn-danger" name="delete_contacts" type="submit">Go Back</button>
+              <button class="btn-danger" name="delete_contacts" type="submit">Delete the user you just entered</button>
               <h2>Here's your address book so far:</h2>
               <ul>
                 <li>{{ contacts.getName }}</li>
                 <li>{{ contacts.getPhone }}</li>
+                <li>{{ contacts.getCity }}</li>
+                <li>{{ contacts.getState }}</li>
+                <li>{{ contacts.getZip }}</li>
+                <li>{{ contacts.getEmail }}</li>
                 <li>{{ contacts.getAddress }}</li>
+                <li>{{ contacts.getStreet }}</li>
                 <li> <img src= {{ contacts.getImage }} ></li>
               </ul>
               <h3>Click here to get back to <a href="/">HOME</a></h3>
