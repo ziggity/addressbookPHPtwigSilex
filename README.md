@@ -25,8 +25,10 @@ _Address book to store contact info for friends and family, using twig to displa
 ## Setup/Installation Requirements
 
 * _Clone repo_
-* _open localhost:8000 server to view project_
+* _run localhost8000 in folder web_
+* _open localhost:8000 server_
 * _update composer if required_
+
 
 
 
