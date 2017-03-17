@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+  </head>
+  <body>
+    {% if contacts %}
+      {% for contact in contacts %}
+        <div class="panel">
+          {% if delete %}
+            <form action="/delete_contacts" method="post">
+              <button class="btn-danger" value={{}} name="delete_contacts" type="submit">Go Back</button>  
+              <h2>Here's the first contact: {{ name }}</h2>
+            <ul>
+              <li>Contact: {{ contact }}</li>
+              <li>Rest: {{ rest }}</li>
+              <li>Attention: {{ attention }}</li>
+            </ul>
+          {% endif %}
+
+    <form action="/goback" method="post">
+      <button type="submit">Go Back</button>
+    </form>
+
+  </body>
+</html>
